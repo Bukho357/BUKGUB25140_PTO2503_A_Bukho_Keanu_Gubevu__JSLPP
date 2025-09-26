@@ -86,7 +86,7 @@ Modular, documented JavaScript ensures maintainability and scalability.
 ## 🎥 Project Walkthrough
 
 Watch my 5–10 minute recorded walkthrough showcasing the app, code structure, and feature implementation:
-Presentation Link: http
+Presentation Link: https://www.veed.io/view/b345e8b4-f6ae-4ca0-8729-73e77ed8d60c?source=editor&panel=share
 
 ## 🛠️ Technologies Used
 
