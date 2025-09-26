@@ -1,9 +1,9 @@
 // Select elements
 const body = document.body;
-const sidebar = document.querySelector(".side-bar");
-const toggleSidebarBtn = document.querySelector(".sidebar-mode");
-const toggleSwitch = document.querySelector(".toggle-switch");
-const switchKnob = document.querySelector(".toggle-switch .switch");
+sidebar = document.querySelector(".side-bar");
+toggleSidebarBtn = document.querySelector(".sidebar-mode");
+toggleSwitch = document.querySelector(".toggle-switch");
+switchKnob = document.querySelector(".toggle-switch .switch");
 
 // Function to move knob visually
 function updateToggleSwitch(isDark) {
