@@ -21,7 +21,7 @@ A client-side task management web application designed to help organize tasks in
 ## 🌐 Live Demo
 
 Try the app live on Netlify:
-https://jslkanban-asamkh25103.netlify.app/
+https:///
 
 ## 💻 Installation & Running Locally
 
@@ -86,7 +86,7 @@ Modular, documented JavaScript ensures maintainability and scalability.
 ## 🎥 Project Walkthrough
 
 Watch my 5–10 minute recorded walkthrough showcasing the app, code structure, and feature implementation:
-Presentation Link
+Presentation Link: http
 
 ## 🛠️ Technologies Used
 
