@@ -21,7 +21,7 @@ A client-side task management web application designed to help organize tasks in
 ## 🌐 Live Demo
 
 Try the app live on Netlify:
-https:///
+https://jslkanban-bukgub25140.netlify.app/
 
 ## 💻 Installation & Running Locally
 
