@@ -78,7 +78,7 @@ A 5--10 minute
 ## 🛠️ Technologies Used
 
 - **HTML5**
-- **CSS3** (flexbox, grid, variables)
+- **CSS3**
 - **JavaScript ES6 Modules**
 - **localStorage API**
 - **Netlify Hosting**
