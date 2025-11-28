@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./styles.css" />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      sizes="32x32"
+      href="./assets/favicon.svg"
+    />
+
+    <script defer src="./scripts/main.js" type="module"></script>
+
+    <title>Kanban Task Management</title>
+  </head>
+
+  <body>
+    <!-- Navigation Sidebar -->
+    <nav class="side-bar" id="sidebar">
+      <div id="side-logo-div">
+        <img id="logo" src="./assets/logo-light.svg" alt="logo-light" />
+      </div>
+
+      <div class="boards-nav-links-div" id="boards-nav-links-div">
+        <h4 id="headline-sidepanel">ALL BOARDS (1)</h4>
+        <button class="board-btn">Launch Career</button>
+      </div>
+
+      <div class="bottom-div">
+        <div class="theme-toggle">
+          <img
+            src="./assets/icon-light-theme.svg"
+            alt="Light Theme"
+            class="theme-icon"
+            id="light-theme-icon"
+          />
+          <div class="toggle"></div>
+          <img
+            src="./assets/icon-dark-theme.svg"
+            alt="Dark Theme"
+            class="theme-icon"
+            id="dark-theme-icon"
+          />
+        </div>
+
+        <button class="sidebar-mode" id="hide-sidebar">
+          <img
+            src="./assets/icon-hide-sidebar.svg"
+            alt="Hide Sidebar"
+            class="theme-icon"
+          />
+          <span class="hide-sidebar-text-span">Hide Sidebar</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Sidebar open icon -->
+    <img
+      id="openSidebarBtn"
+      src="./assets/icon-show-sidebar.svg"
+      alt="Show Sidebar"
+    />
+
+    <!-- Main Layout -->
+    <div id="layout">
+      <header id="header" class="sticky-header">
+        <div class="header-name-div">
+          <img
+            src="./assets/favicon.svg"
+            alt="logo-mobile"
+            class="logo-mobile"
+          />
+          <h2 class="header-board-name" id="header-board-name">
+            Launch Career
+          </h2>
+        </div>
+        <button id="add-new-task-btn" class="primary-btn">
+          + Add New Task
+        </button>
+      </header>
+
+      <div class="container">
+        <!-- MESSAGE ELEMENT FOR LOADING / ERROR -->
+        <div id="message" class="Loading-message"></div>
+
+        <main class="card-column-main">
+          <!-- TODO Column -->
+          <div class="column-div" data-status="todo">
+            <div id="todo-head-div" class="column-head-div">
+              <span class="dot" id="todo-dot"></span>
+              <h4 id="toDoText" class="columnHeader">TODO</h4>
+            </div>
+            <div class="tasks-container"></div>
+          </div>
+
+          <!-- DOING Column -->
+          <div class="column-div" data-status="doing">
+            <div id="doing-head-div" class="column-head-div">
+              <span class="dot" id="doing-dot"></span>
+              <h4 id="doingText" class="columnHeader">DOING</h4>
+            </div>
+            <div class="tasks-container"></div>
+          </div>
+
+          <!-- DONE Column -->
+          <div class="column-div" data-status="done">
+            <div id="done-head-div" class="column-head-div">
+              <span class="dot" id="done-dot"></span>
+              <h4 id="doneText" class="columnHeader">DONE</h4>
+            </div>
+            <div class="tasks-container"></div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <dialog id="task-modal">
+      <form method="dialog" id="task-form">
+        <div class="modal-header">
+          <h3>Task</h3>
+          <button type="button" class="close-btn" id="close-modal-btn">
+            &times;
+          </button>
+        </div>
+
+        <label for="task-title">Title</label>
+        <input type="text" id="task-title" name="title" required />
+
+        <label for="task-desc">Description</label>
+        <textarea id="task-desc" name="description" rows="4"></textarea>
+
+        <label for="task-status">Status</label>
+        <select id="task-status" name="status" required>
+          <option value="todo">todo</option>
+          <option value="doing">doing</option>
+          <option value="done">done</option>
+        </select>
+
+        <label for="task-priority">Priority</label>
+        <select id="task-priority" name="priority" required>
+          <option value="high">high</option>
+          <option value="medium">medium</option>
+          <option value="low">low</option>
+        </select>
+
+        <div class="button-group">
+          <button type="button" class="submit-btn-1" id="save-changes-btn">
+            Save Changes
+          </button>
+          <button type="button" class="delete-btn" id="delete-task-btn">
+            Delete Task
+          </button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- Confirm Delete Modal -->
+    <dialog class="confirm-modal" id="confirm-delete-modal">
+      <form method="dialog">
+        <h3>Delete Task?</h3>
+        <p>You are about to delete the following task:</p>
+        <div class="preview"></div>
+        <menu>
+          <button type="button" id="cancel">Cancel</button>
+          <button type="submit" id="confirm">Yes, delete it.</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <!-- New Task Modal -->
+    <dialog class="modal-overlay" id="new-task-modal">
+      <form class="modal-window" id="new-task-modal-window">
+        <div class="modal-header">
+          <h3 class="modal-title">Add New Task</h3>
+          <span class="close-btn" id="cancel-add-btn">&times;</span>
+        </div>
+
+        <div class="input-div">
+          <label for="title-input" class="label-modal-window">Title</label>
+          <input
+            type="text"
+            class="modal-input"
+            id="title-input"
+            placeholder="e.g. Take a little break"
+            required
+          />
+        </div>
+
+        <div class="input-div">
+          <label for="desc-input" class="label-modal-window">Description</label>
+          <textarea
+            name="description"
+            id="desc-input"
+            placeholder="e.g. Pet your dog, have a cup of coffee, dance to your favourite song and come back to conquer this challenge. 💪🏾"
+            required
+          ></textarea>
+        </div>
+
+        <div class="input-div">
+          <label for="select-status" class="label-modal-window">Status</label>
+          <select name="status" id="select-status" required>
+            <option value="todo">todo</option>
+            <option value="doing">doing</option>
+            <option value="done">done</option>
+          </select>
+        </div>
+
+        <div class="input-div">
+          <label for="select-priority" class="label-modal-window"
+            >Priority</label
+          >
+          <select name="priority" id="select-priority" required>
+            <option value="high">high</option>
+            <option value="medium">medium</option>
+            <option value="low">low</option>
+          </select>
+        </div>
+
+        <div class="button-group">
+          <input
+            type="submit"
+            class="submit-btn"
+            id="create-task-btn"
+            value="Create Task"
+          />
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>
