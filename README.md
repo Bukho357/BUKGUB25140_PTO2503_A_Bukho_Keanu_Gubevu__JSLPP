@@ -75,7 +75,7 @@ A 5--10 minute
 
 🎞️ **Presentation Link:** Add your Loom/YouTube link here.
 
-## 🛠️ Tech Stack
+## 🛠️ Technologies Used
 
 - **HTML5**
 - **CSS3** (flexbox, grid, variables)
