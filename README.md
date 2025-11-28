@@ -121,11 +121,7 @@ deploy. 4. Assign a custom Netlify domain.
 
 ## 🎥 Walkthrough Presentation
 
-A 5--10 minute walkthrough explains: - UI layout\
-
-- Code structure\
-- Feature implementations\
-- Responsiveness and theme toggle
+A 5--10 minute
 
 🎞️ **Presentation Link:** Add your Loom/YouTube link here.
 
@@ -154,7 +150,3 @@ A 5--10 minute walkthrough explains: - UI layout\
 ###### Light vs Dark mode
 
 ![Light vs Dark](/images/lightVsDarkMode.png)
-
-## 🧑‍💻 Author
-
-Created by **_Bukho Keanu Gubevu_**.
