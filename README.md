@@ -1,102 +1,160 @@
-## 🗂️ JSL Kanban Task Management App
+# 🗂️ JSL Kanban Task Management App
 
-A client-side task management web application designed to help organize tasks into TODO, DOING, and DONE columns—mimicking a Kanban board. Users can create, edit, delete, and categorize tasks with persistent storage using localStorage.
+A fully responsive **Kanban-style task management application** built
+with **HTML, CSS, and modular JavaScript (ES6 modules)**.\
+The app allows users to **create, edit, delete, categorize, and persist
+tasks** using `localStorage`.\
+It includes a **dynamic sidebar**, **light/dark mode toggle**, **task
+counter**, and **loading indicator**, following clean UI/UX principles
 
-## ✨ Key Features
+## 🚀 User Stories Implemented
 
-🆕 Create, Edit & Delete Tasks: Manage tasks quickly through a reusable modal interface.
+### 📋 Task Management
 
-📋 Task Status Columns: Visualize tasks in TODO, DOING, and DONE columns.
+- Create new tasks using a reusable modal form.
+- Edit task **title, description, and status**.
+- Delete tasks with a confirmation prompt.
+- Display tasks in **To Do**, **Doing**, and **Done** columns.
+- Dynamic task counters update automatically.
+- Tasks persist using `localStorage` even after closing the browser.
+- Show a **loading message** while tasks are fetched from storage.
 
-💾 Persistent Storage: All tasks are saved in localStorage to maintain data between sessions.
+### 🧭 Sidebar & Layout
 
-🔢 Dynamic Task Counts: Column headers automatically update with the current number of tasks.
+- **Toggle sidebar** (expand/collapse) for better workspace control.
+- Responsive sidebar that adapts to both desktop and mobile screens.
+- Clean, intuitive layout inspired by Kanban workflow systems.
 
-🎨 Theme Toggle: Switch between light and dark modes for a personalized workspace.
+### 🎨 Theming
 
-📂 Sidebar Toggle: Collapse or expand the sidebar for a cleaner interface.
+- **Light/Dark mode toggle** using CSS variables.
+- Theme automatically persists across sessions.
+- UI adjusts for accessibility and readability.
 
-⏳ Loading Indicator: Shows a loading message while tasks are fetched asynchronously.
+### 🛠 Developer Features
 
-## 🌐 Live Demo
+- Fully modular JavaScript using **ES6 modules**:
+  - `taskManager.js` → task CRUD logic\
+  - `formUtils.js` → reusable form helpers\
+  - `render.js` & `taskElement.js` → DOM rendering\
+  - `taskCounter.js` → live column stats\
+  - `theme.js` → theme logic\
+  - `status.js` → defines and manages task categories\
+- Clean, scalable folder structure.
+- Readable and maintainable code.
 
-Try the app live on Netlify:https://jslkanban-bukgub25140.netlify.app/
+## 📂 Project Structure
 
-## 💻 Installation & Running Locally
+    project-root/
+    │── index.html
+    │── styles.css
+    │── main.js
+    │
+    │── utils/
+    │   └── localStorage.js
+    │
+    │── ui/
+    │   ├── render.js
+    │   ├── modalHandlers.js
+    │   ├── status.js
+    │   ├── sortTasks.js
+    │   ├── sidebarManager.js
+    │   ├── taskCounter.js
+    │   ├── taskElement.js
+    │   └── theme.js
+    │
+    │── tasks/
+    │   ├── taskManager.js
+    │   └── formUtils.js
+    │
+    │── images/
+    │   ├── dark-modeModal.png
+    │   ├── desktopSidebar.png
+    │   ├── lightVsDarkMode.png
+    │   └── mobileModal.png
+    │
+    │── assets/
+    │   ├── favicon.svg
+    │   ├── logo-light.svg
+    │   ├── logo-dark.svg
+    │   └── icons.svg
+    │
+    └── README.md
 
-Prerequisites
+## ⚙️ Setup & Running Locally
 
-Modern web browser (Chrome, Firefox, Edge, Safari)
+### **Prerequisites**
 
-Optional: Local HTTP server for proper ES module support
+- Modern browser (Chrome, Edge, Firefox, Safari)
+- Optional: Local server for ES module support
 
-Steps
+### **Steps**
 
-Clone or download the repository:
+1.  Clone the repository:
 
-git clone <your-repo-url>
-cd <your-repo-folder>
+    ```bash
+    git clone <your-repo-url>
+    cd <your-repo-folder>
+    ```
 
-Using a local server (recommended):
+2.  Run locally (recommended):
 
-npm install -g live-server # install live-server globally
-live-server # start the server in project folder
+    ```bash
+    npm install -g live-server
+    live-server
+    ```
 
-The app will open in your browser with full ES module support.
+3.  The app will open automatically in your browser.
 
-Note: Directly opening index.html may cause issues due to ES module restrictions in some browsers.
+> ⚠️ _Opening `index.html` directly may cause module errors depending on
+> your browser settings._
 
-## ⚙️ How It Works
+## 🌐 Deployment
 
-On load, tasks are fetched asynchronously from localStorage or fallback default tasks.
+This project is deployed on **Netlify**.
 
-Tasks are rendered dynamically into columns based on their status (todo, doing, done).
+**Deployment Steps:** 1. Push project to GitHub. 2. Go to Netlify →
+**Deploy site** → Import from GitHub. 3. Choose the repository and
+deploy. 4. Assign a custom Netlify domain.
 
-Clicking a task opens a modal for editing or deleting it.
+💻 **Live App** → https://jslkanban-bukgub25140.netlify.app/
 
-The "Add New Task" button opens a modal to create new tasks.
+## 🎥 Walkthrough Presentation
 
-All changes are saved to localStorage and reflected immediately on the board.
+A 5--10 minute walkthrough explains: - UI layout\
 
-Users can toggle themes and sidebar visibility to customize their workspace.
+- Code structure\
+- Feature implementations\
+- Responsiveness and theme toggle
 
-## 🚀 Deployment & Features Implementation
+🎞️ **Presentation Link:** Add your Loom/YouTube link here.
 
-Project deployed to Netlify with a custom URL.
+## 🛠️ Tech Stack
 
-Fully responsive for desktop and mobile users.
+- **HTML5**
+- **CSS3** (flexbox, grid, variables)
+- **JavaScript ES6 Modules**
+- **localStorage API**
+- **Netlify Hosting**
 
-Sidebar interaction and mobile menu mimic the Figma reference.
+## 📸 Preview
 
-Dark/light mode implemented using CSS variables and toggle switch.
+###### Desktop sidebar view
 
-Modular, documented JavaScript ensures maintainability and scalability.
+![Desktop Sidebar](/images/desktopSidebar.png)
 
-## 🔮 Future Enhancements
+###### Mobile modal menu
 
-## ☁️ Sync tasks with a backend or cloud storage.
+![Mobile Modal](/images/mobileModal.png)
 
-## 🖱️ Drag-and-drop functionality for easy task management.
+###### Edit/Delete modal
 
-## 🔐 User authentication for personalized boards.
+![Dark Mode Modal](/images/dark-modeModal.png)
 
-## 📅 Add due dates, priorities, and notifications.
+###### Light vs Dark mode
 
-## 🎥 Project Walkthrough
+![Light vs Dark](/images/lightVsDarkMode.png)
 
-Watch my 5–10 minute recorded walkthrough showcasing the app, code structure, and feature implementation:
-Presentation Link:
+## 🧑‍💻 Author
 
-## 🛠️ Technologies Used
-
-HTML, CSS, JavaScript (ES Modules)
-
-localStorage API for data persistence
-
-Responsive design principles for mobile and desktop
-
-## 💡 Notes
-
-All features follow clean code and modular design principles.
-
-Fully functional Kanban board that meets the original user stories and Figma design.
+Created by **_Bukho Keanu Gubevu_**.
