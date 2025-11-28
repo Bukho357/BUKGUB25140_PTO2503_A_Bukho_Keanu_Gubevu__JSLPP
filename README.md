@@ -100,3 +100,9 @@ A 5--10 minute
 ###### Light vs Dark mode
 
 ![Light vs Dark](/images/lightVsDarkMode.png)
+
+## 💡 Notes
+
+All features follow clean code and modular design principles.
+
+Fully functional Kanban board that meets the original user stories and Figma design.
