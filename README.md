@@ -73,7 +73,7 @@ deploy. 4. Assign a custom Netlify domain.
 
 A 5--10 minute
 
-🎞️ **Presentation Link:** Add your Loom/YouTube link here.
+🎞️ **Presentation Link:** → https://www.veed.io/view/647a86bb-a576-4042-8b55-863e285fe072?source=editor&panel=share
 
 ## 🛠️ Technologies Used
 
