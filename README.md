@@ -1,7 +1,7 @@
 # 🗂️ JSL Kanban Task Management App
 
 A fully responsive **Kanban-style task management application** built
-with **HTML, CSS, and modular JavaScript (ES6 modules)**.\
+with **HTML, CSS, and JavaScript**.\
 The app allows users to **create, edit, delete, categorize, and persist
 tasks** using `localStorage`.\
 It includes a **dynamic sidebar**, **light/dark mode toggle**, **task
